@@ -41,9 +41,42 @@ a {
 header
 ************************/
 header {
-    height: 60vh;
+    height: 57vh;
+    position: relative;
+}
+header::before {
     background: linear-gradient(140deg, var(--darkBlue), var(--lightBlue));
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    height: 57vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    z-index: -1;
+    transform: skew(0deg, 8deg);
+    transform-origin: right bottom;
+}
+header h1 {
+    color: var(--white);
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+header article a {
+    background-color: var(--white);
+    border-radius: 30px;
+    padding: 8px 40px;
+    margin-top: 30px;
+    display: inline-block;
+    color: var(--darkBlue);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 4px var(--darkBlue);
+}
+header article a:hover {
+    text-decoration: underline;
+    background-color: #f3f3f3;
 }
 nav {
     display: flex;
@@ -173,6 +206,44 @@ main section:nth-child(4) {
 /************************
 footer
 ************************/
+footer {
+    background-color: #1976d2;
+    position: relative;
+    padding: 80px 0;
+    color: var(--white);
+}
+footer::after {
+    content: "";
+    position: absolute;
+    top: 0; 
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: url(img/angular_whiteTransparent_withMargin.png) top 0 left 0, url(img/angular_whiteTransparent_withMargin.png) top 80px left 160px;
+    opacity: .08;
+    background-size: 320px auto;
+}
+footer .row {
+    width: 35%;
+    margin: auto;
+    line-height: 2.5;
+}
+footer .row:first-child {
+    display: flex;
+    justify-content: space-between;
+}
+footer a {
+    color: var(--white);
+}
+footer .row:last-child {
+    text-align: center;
+    margin-top: 35px;
+}
+footer h4 {
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
 
 /************************
 R E S P O N S I V E
