@@ -25,6 +25,10 @@ body {
     max-width: 920px;
     margin: auto;
     padding: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
 }
 ul {
     list-style: none;
@@ -32,15 +36,6 @@ ul {
 a {
     text-decoration: none;
     transition: var(--transition);
-}
-hr {
-    display: block;
-    content: "";
-    height: 1px;
-    width: 95%;
-    background-color: lightgray;
-    margin: 20px auto;
-    border: none;
 }
 /************************
 header
@@ -112,33 +107,76 @@ header article div {
     flex: 1;
 }
 /************************
-sections
+main
 ************************/
-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-section img {
+main section img {
     width: 100%;
 }
-section article:first-child {
+main section article.container div:first-child{
     flex: 0 0 40%;
 }
-section article:last-child {
+main section article.container div:last-child{
     flex: 0 0 55%;
 }
-section h2 {
+main section:nth-child(even) article div:nth-child(1) {
+    order: 1;
+}
+main section h2 {
     color: var(--lightBlue);
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
-section p {
+main section p {
     line-height: 2;
 }
-section:nth-child(even) article:first-child {
-    order: 2;
+main section {
+    border-bottom: 1px solid lightgray;
+    margin: auto;
+    width: 95%;
 }
-/* ovo gore radi kad se hr izbrise iz html-a*/
+main section:nth-child(4) {
+    border: none;
+}
+.try {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    margin: 30px auto;
+    box-shadow: 0 2px 25px lightgray;
+    padding: 40px;
+}
+.try:hover {
+    box-shadow: 0 2px 10px lightgray;
+    text-decoration: underline;
+}
+.try div:first-child {
+    flex: 0 0 20%;
+}
+.try div:last-child {
+    flex: 0 0 80%;
+}
+.try img {
+    width: 75%;
+}
+.try h3 {
+    color: var(--lightBlue);
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+.try p {
+    color: var(--text);
+    line-height: 1.8;
+}
+/************************
+footer
+************************/
 
+/************************
+R E S P O N S I V E
+************************/
+@media (max-width: 767px) {
+
+}
